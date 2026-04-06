@@ -25696,7 +25696,7 @@ async function getDiff(base) {
         },
         silent: true,
     };
-    const exitCode = await exec.exec("git", ["diff", `${base}...HEAD`], options);
+    const exitCode = await exec.exec("git", ["diff", `origin/${base}...HEAD`], options);
     if (exitCode !== 0) {
         throw new Error(`git diff failed with exit code ${exitCode}`);
     }
