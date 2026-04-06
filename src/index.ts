@@ -119,7 +119,7 @@ async function fetchResult(
 	cloudUrl: string,
 	token: string,
 	jobId: string,
-): Promise<VerifyResultResponse["data"]> {
+): Promise<NonNullable<VerifyResultResponse["data"]>> {
 	const response = await fetch(`${cloudUrl}/verify/${jobId}`, {
 		headers: { Authorization: `Bearer ${token}` },
 	});
