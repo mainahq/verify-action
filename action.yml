@@ -1,0 +1,24 @@
+name: 'Maina Verify'
+description: 'Run maina verification on your pull request'
+inputs:
+  token:
+    description: 'Maina API token'
+    required: true
+  base:
+    description: 'Base branch for diff comparison'
+    required: false
+    default: 'main'
+  cloud_url:
+    description: 'Maina cloud API URL'
+    required: false
+    default: 'https://api.maina.dev'
+outputs:
+  passed:
+    description: 'Whether verification passed'
+  findings_count:
+    description: 'Number of findings'
+  proof_url:
+    description: 'URL to verification proof'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
