@@ -11,7 +11,7 @@ inputs:
   cloud_url:
     description: 'Maina cloud API URL'
     required: false
-    default: 'https://api.maina.dev'
+    default: 'https://api.mainahq.com'
 outputs:
   passed:
     description: 'Whether verification passed'

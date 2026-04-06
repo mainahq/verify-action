@@ -142,7 +142,7 @@ async function fetchResult(
 async function run(): Promise<void> {
 	const token = core.getInput("token", { required: true });
 	const base = core.getInput("base") || "main";
-	const cloudUrl = (core.getInput("cloud_url") || "https://api.maina.dev").replace(/\/+$/, "");
+	const cloudUrl = (core.getInput("cloud_url") || "https://api.mainahq.com").replace(/\/+$/, "");
 
 	const repo = process.env.GITHUB_REPOSITORY;
 	if (!repo) {

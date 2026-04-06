@@ -25764,7 +25764,7 @@ async function fetchResult(cloudUrl, token, jobId) {
 async function run() {
     const token = core.getInput("token", { required: true });
     const base = core.getInput("base") || "main";
-    const cloudUrl = (core.getInput("cloud_url") || "https://api.maina.dev").replace(/\/+$/, "");
+    const cloudUrl = (core.getInput("cloud_url") || "https://api.mainahq.com").replace(/\/+$/, "");
     const repo = process.env.GITHUB_REPOSITORY;
     if (!repo) {
         core.setFailed("GITHUB_REPOSITORY is not set. This action must run in a GitHub Actions environment.");
