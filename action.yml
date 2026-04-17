@@ -13,7 +13,7 @@ inputs:
     required: false
     default: 'https://api.mainahq.com'
   github_token:
-    description: 'GitHub token for posting sticky comment + Check Run on the PR. Pass ${{ secrets.GITHUB_TOKEN }} and set permissions.pull-requests and permissions.checks to write.'
+    description: 'GitHub token for posting sticky comment + Check Run on the PR. Pass the workflow secrets.GITHUB_TOKEN and set permissions.pull-requests and permissions.checks to write.'
     required: false
     default: ''
 outputs:
