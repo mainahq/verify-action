@@ -60,7 +60,7 @@ async function getDiff(base: string): Promise<string> {
 		silent: true,
 	};
 
-	const exitCode = await exec.exec("git", ["diff", `${base}...HEAD`], options);
+	const exitCode = await exec.exec("git", ["diff", `origin/${base}...HEAD`], options);
 	if (exitCode !== 0) {
 		throw new Error(`git diff failed with exit code ${exitCode}`);
 	}
@@ -405,7 +405,7 @@ async function postToPR(
 async function run(): Promise<void> {
 	const token = core.getInput("token", { required: true });
 	const base = core.getInput("base") || "main";
-	const cloudUrl = (core.getInput("cloud_url") || "https://api.maina.dev").replace(/\/+$/, "");
+	const cloudUrl = (core.getInput("cloud_url") || "https://api.mainahq.com").replace(/\/+$/, "");
 	// `github_token` is optional: when unset we skip posting. Callers who
 	// want sticky comment + Check Run pass `${{ secrets.GITHUB_TOKEN }}`
 	// and set `permissions: { pull-requests: write, checks: write }`.
