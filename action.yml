@@ -11,7 +11,11 @@ inputs:
   cloud_url:
     description: 'Maina cloud API URL'
     required: false
-    default: 'https://api.maina.dev'
+    default: 'https://api.mainahq.com'
+  github_token:
+    description: 'GitHub token for posting sticky comment + Check Run on the PR. Pass ${{ secrets.GITHUB_TOKEN }} and set permissions.pull-requests and permissions.checks to write.'
+    required: false
+    default: ''
 outputs:
   passed:
     description: 'Whether verification passed'
@@ -19,6 +23,10 @@ outputs:
     description: 'Number of findings'
   proof_url:
     description: 'URL to verification proof'
+  report_url:
+    description: 'Public report permalink (https://mainahq.com/r/<run-id>)'
+  run_id:
+    description: 'Verification run id'
 runs:
   using: 'node20'
   main: 'dist/index.js'
